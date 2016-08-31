@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" lang="en">
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Things to Do</title>
+
+</head>
+<body ng-app="app">
+	<header class="header">
+		<h1>Places We Like</h1>
+		<p>by Brianna + Corbin</p>
+	</header>
+
+	<div ng-controller="Controller">
+		<ui-gmap-google-map
+			center="map.center"
+			zoom="map.zoom">
+
+			<ui-gmap-markers
+				models="markers"
+				coords="'self'"
+				events="markerEvents"
+				icon="'icon'">
+			</ui-gmap-markers>
+
+			<ui-gmap-window
+				show="window.show"
+				coords="window.model"
+				options="window.options"
+				closeClick="closeWindow"
+				templateUrl="'infowindow.tpl.html'"
+				templateParameter="window.model">
+			</ui-gmap-window>
+		</ui-gmap-google-map>
+	</div>
+
+
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js'></script>
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+	<script src='lib/angular-simple-logger.min.js'></script>
+	<script src='lib/angular-google-maps.min.js'></script>
+	<script src='app.js'></script>
+</body>
+</html>

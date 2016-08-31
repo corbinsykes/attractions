@@ -1,0 +1,28 @@
+<div ng-controller="templateController">
+	<h1 class="name">{{parameter.name}}</h2>
+	<p class="description">{{parameter.description}}</p>
+	<hr>
+
+	<div class="lines">
+		<div class="transportation-icon">
+			<i class="fa fa-subway" aria-hidden="true"></i>
+		</div>
+		<div
+			class="line"
+			ng-class="{
+				'red': line=='1' || line=='2' || line=='3',
+				'orange': line=='B' || line=='D' || line=='F' || line=='M',
+				'yellow': line=='N' || line=='Q' || line=='R',
+				'green': line=='4' || line=='5' || line=='6',
+				'blue': line=='A' || line=='C' || line=='E',
+				'brown': line=='J' || line=='Z',
+				'grey': line=='L',
+				'lime': line=='G'
+			}"
+			ng-repeat="line in parameter.subway">
+			<p>
+				{{line}}
+			</p>
+		</div>
+	</div>
+</div>
