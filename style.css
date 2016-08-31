@@ -101,7 +101,7 @@ p {
 	font-size: 0.75rem;
 	font-style: italic;
 	color: gray;
-	margin-bottom: 0.75rem;
+	margin: 0.25rem 0 0.75rem;
 }
 
 .transportation-icon {
